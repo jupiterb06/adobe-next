@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>adobe //next creative application</title>
+  <link rel="stylesheet" href="styles/site.css">
+  <link rel="stylesheet" href="https://use.typekit.net/rjd0yte.css">
+  <link rel="stylesheet" href="https://use.typekit.net/rjd0yte.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <section id="start">
+        <div id ="start-text">
+             <h2 ><span id="start-title">a (kind of) complete overview of the creative scene at cornell university </span><span id="cursor-1" class="cursor">|</span> </h2>
+        <p><span id ="start-subtitle">as explained by jupiter bhanot</span> <span id="cursor-2" class="cursor">|</span></p>  
+
+        </div>
+       
+        <button id="scroll-to-map">next >></button>
+    </section>
+
+    <section id="map" class="fade-in-element">
+        <div id="map-container">
+            <!-- SVG layer handles the lines/connections -->
+            <svg id="svg-connections"></svg>
+            <!-- JavaScript will dynamically inject interactive HTML nodes here -->
+        </div>
+
+        <!-- Shared tooltip box for hover actions -->
+        <div id="tooltip" class="hidden">
+            <h3 id="tooltip-name"></h3>
+            <p id="tooltip-desc"></p>
+        </div>
+
+        <div id="map-div">
+                    <p>mouse over the different nodes and connections to learn about (some of) the different departments, 
+            organizations, and spaces. nodes with this icon indicate that i’m involved in them.</p>
+        <button id="scroll-to-about">is that everything?</button>
+
+        </div>
+
+    </section>
+
+    <section id = "about-the-scene" class="fade-in-element">
+            <p>of course not! cornell university’s creative scene is huge. 
+                this map focuses on organizations with their roots in visual arts and design, 
+                but we have hundreds of musical and performance groups, literary magazines, project teams, 
+                craft groups, and everything in-between. one of the biggest things that defines our community is 
+                collaboration-- organizations are always co-sponsoring events and promoting one another. 
+                it’s common for students who are engaged creatively, such as myself, to participate in 
+                multiple organizations at once. people are also super passionate and intrinsically driven-- when 
+                Cornell students want something done, it doesn’t just “get done”, it gets produced. </p>
+
+            <button id = "scroll-to-more-about">it feels like there’s a ‘but’ somewhere.</button>      
+        </section>
+
+        <section id = "more-about" class="fade-in-element">
+            <p>one of the things that i believe is holding back Cornell's creative community is also, ironically, 
+                one of our greatest strengths. Cornell has a huge culture of ambition, and while that pushes students to do a 
+                lot of really amazing work, it also creates an intrinsic fear of failure or, perhaps even worse, 
+                “wasting time”. while some of our creative organizations are more laid back, many have recruitment 
+                processes that range from lengthy applications to three or four rounds of interviews. students who don’t see 
+                immediate, personal success in these organizations often struggle to remain invested, especially if they’re not 
+                also pursuing a creative field on an academic or professional level. as a leader in several of these 
+                organizations, i’ve heard many of my peers say that they’ve left organizations after one semester 
+                because they weren’t able to get a position on the executive board. i get where they’re coming from-- our 
+                academics are tough, and when factoring in jobs, project teams, and other opportunities, it can be difficult 
+                to justify fitting in activities that don’t directly advance professional goals. it’s a stereotype on campus 
+                that Cornell students create calendar events for everything from house parties to self-care tasks to dates, 
+                and that “locked in” culture prevents people from experimenting. this fear of experimentation and this need to 
+                move at a rapid pace also keeps people from pushing deeper and understanding the “why” of design-- everything is 
+                product focused, rather than process.
+            </p>
+
+            <button id="scroll-to-about-me">so, what do i plan to do about it?</button>
+        </section>
+
+        <section id="about-me" class="fade-in-element">
+            <p>my vision for Adobe on Cornell campus is to leverage the interconnectedness of our scene and create 
+                spaces where creativity isn’t tied to recruitment cycles or resume building. the first thing i’d do is 
+                host a series of high-energy, low-pressure <span class="highlight">“design nights”</span>. each event would be led in collaboration with a 
+                single organization, department or professor, and would focus on their specific philosophy, method, or medium 
+                of design. while i’d like these events to be grounded in skill-building and hands-on experimentation, i think 
+                having an element of theory in the workshops would be a great way to encourage students to think critically 
+                about design, and to understand what draws them to specific approaches, styles, and disciplines, as well as 
+                expose them to new ones. 
+            </p>
+
+            <button id="scroll-to-which-org">who would i work with first?</button>
+
+            
+        </section>
+
+        
+                <section id="which-org" class="fade-in-element">
+<p>eventually, i’d like to host design nights with as many different groups as possible, but i’d start off by 
+                hosting one with the art department. obviously, i’m a little biased, but the art department offers the most 
+                comprehensive adobe coursework at Cornell, and their approach to the creative process is one rooted in research 
+                and experimentation, which is exactly what i’m trying to foster. one of my secondary goals as a leader for 
+                adobe on campus is to promote and uplift initiatives that are already in place-- the art department, despite all 
+                the amazing work it produces and the interdisciplinary courses it offers, is borderline 
+                unheard of in the wider campus community, and i think events like design nights would be the perfect way 
+                to highlight the department and other less well-known organizations.</p>
+
+                <button id="scroll-to-why-me">okay, but why <span class="highlight">me?</span></button>
+                </section>
+    
+        <section id="why-me" class="fade-in-element">
+            <p>i believe i’m the best person to represent adobe on campus because i’m someone who loves to get 
+                people together. my experience as a leader in creative student organizations has 
+                taught me how to cross-collaborate, how to get people from different disciplines to get on the same page and 
+                synthesize their unique skills, perspectives, and interests to create a cohesive-yet-dynamic final product. 
+                i work with incoming art students to help them not only adjust to being college students, but to being 
+                full-time creatives, to help them find what inspires them at Cornell and balance making work for their 
+                classes and work for themselves. outside of my leadership roles, i’m always planning events for my friends, 
+                whether it’s a movie night in my dorm or an after-hours dance party in the drawing studio. </p>
+
+                <button id="scroll-to-ai">creatively speaking…</button>
+        </section>
+
+        <section id="ai" class="fade-in-element">
+
+            <p>
+            i love to try new things. as an art major at cornell, my course requirements are evenly split between “major”
+             courses-- studios, art history, theory and criticism --and out of department electives. i use these 
+             electives as a way to explore fields like computer science, game design, literature, communications, and media 
+             studies, and to bring what i learn into my creative practice. as a designer, i’m really influenced by technology.
+              i grew up working for my dad’s IT business, which inspired an early interest in the physical side of computing. 
+              our house was always filled with old and obsolete hardware, and those aesthetics became a huge part of my artistic 
+              practice. at the same time, i also grew up in silicon valley, where technology changes and mutates at a pace 
+              that’s near impossible to keep up with. what’s interesting to me is where the old and new meet-- even the latest 
+              and greatest, most state-of-the-art hardware is dependent on software and frameworks that are considered obsolete,
+               and that juxtaposition is what really drives my view on emerging technologies like AI.
+            </p>
+
+            <button id="scroll-to-more-ai">and?</button>
+            
+            </section>
+
+              <section id="more-ai" class="fade-in-element"> <p>i’m really excited about the ways that creatives have been engaging with AI on a conceptual level. artificial 
+                intelligence opens up a lot of interesting questions regarding language, originality, and the ever-shifting 
+                relationship between creativity and technological advancement. designers and artists who use AI in their work 
+                in a way that explore these questions are, in my opinion, the ones making the best use of the technology. i also
+                 think it’s interesting to use AI as a tool for challenging your existing perspectives; seeing how an 
+                 LLM interprets my ideas has helped me recontextualize them and encouraged me to think more deeply about what 
+                 i’m saying with my work. at the same time, though, i think my concerns reflect a lot of the broader anxieties 
+                 regarding AI; namely, the fear that AI will be used to replace human creatives, and that those who remain will 
+                 be forced into depending on it. i think AI as a tool is no different than any other, with its own specific 
+                 applications, and that, when it is used well, enhances the creative process of experimentation and revision, 
+                 rather than replaces it. i want to see more AI tools made by and for creatives, tools that accurately interpret 
+                 our needs and that seek to work with us, rather than simply approximate what we do.
+</p>
+</section>
+            <button id="back-to-top">back to top ^</button>
+
+
+    <script src="scripts/jquery-4.0.0.min.js"></script>
+    <script src="scripts/map.js"></script>
+        <script src="scripts/transitions.js"></script>
+        <script src="scripts/typewriter.js"></script>
+
+
+
+
+</body>
+</html>

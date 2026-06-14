@@ -1,0 +1,235 @@
+:root{
+  --blueGrey: #41404d;
+  --lightPink: #f9dcf1;
+  --brightBlue: #7c80f3;
+  --brightPink: #f18ddb;
+  --offBlack: #111112;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+section{
+  /* width: 100%; */
+  min-height: 100vh;
+  max-width: 100vw;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-top: 1px solid var(--offBlack);
+  border-bottom: 1px solid var(--offBlack);
+
+
+}
+button{
+
+  border: 1px solid var(--offBlack);
+  background-color: transparent;
+  border-radius: 50px;
+  width: fit-content;
+  padding: 20px;
+
+  font-family: "Google Sans Code", monospace;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 2.5rem;
+
+  text-align: right;
+
+  transition: scale 0.2s ease-in-out,
+              background-color 0.2s ease-in-out; 
+}
+
+button:hover{
+  background-color: var(--offBlack);
+  color: white;
+  scale: 102%;
+}
+h2{
+  font-family: "pf-pixelscript", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 6rem;
+  margin: 0;
+  margin-left: 10%;
+  text-align: right;
+}
+
+p{
+  font-family: "argent-pixel-cf", sans-serif;
+font-weight: 400;
+font-style: normal;
+  font-size: 2rem;
+}
+
+/* Initial hidden state */
+.fade-in-element {
+  opacity: 0;
+  margin-top: 40px; /* Optional: adds a subtle slide-up context */
+}
+
+.cursor {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+  /* Smooth blinking animation */
+  animation: blink 0.7s infinite;
+}
+
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+#map-container {
+  position: relative;
+  /* width: 100vw; */
+  width: 80%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#svg-connections {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* REMOVED pointer-events: none; so mouse actions register on inner lines */
+}
+
+/* Default state of visible path lines */
+.connection-line {
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 2;
+  pointer-events: none; /* Let the cursor ignore this thin element */
+  transition: stroke 0.2s, stroke-width 0.2s;
+}
+
+/* Invisible overlay lines strictly acting as wide mouse collision triggers */
+.connection-hover-target {
+  stroke: transparent;
+  stroke-width: 16px; /* Fat hit-box makes thin lines easy to hover */
+  cursor: pointer;
+  pointer-events: stroke; /* Target catches mouse events specifically along its stroke path */
+}
+
+/* Bright highlight triggered via JS class injection during mouseenter */
+.connection-line.line-active {
+  stroke: #ff007f;
+  stroke-width: 3;
+}
+/* Styled HTML interactive Nodes */
+.node {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: #00fff0;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%); /* Centers node on coordinates */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 240, 0.6);
+  z-index: 2;
+}
+
+.node:hover {
+  transform: translate(-50%, -50%) scale(1.4);
+  background-color: #ff007f;
+  box-shadow: 0 0 20px rgba(255, 0, 127, 0.9);
+}
+
+/* Line connections */
+.connection-line {
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 2;
+  transition: stroke 0.2s, stroke-width 0.2s;
+}
+
+/* Tooltip design */
+#tooltip {
+  position: absolute;
+  background: white;
+  color: #000000;
+  border: 1px solid var(--offBlack);
+  font-family: sans-serif;
+  pointer-events: none;
+  z-index: 10;
+  transform: translate(15px, 15px);
+}
+
+#tooltip-name{
+
+    padding: 10px 15px;
+    margin: 0;
+
+  font-family: "pf-pixelscript", sans-serif;
+  font-size: 1.5rem;
+  color: var(--offBlack);
+
+  background-color: var(--lightPink);
+  border: none;
+  border-bottom: 1px solid var(--offBlack);
+  text-align: left;
+
+}
+
+#tooltip-desc{
+
+    padding: 10px 15px;
+
+    font-family: "argent-pixel-cf", sans-serif;
+    font-size: 1rem;
+    color: var(--offBlack);
+
+}
+
+.hidden {
+  display: none;
+}
+
+/* Styling modifier strictly for nodes containing images */
+.image-node {
+  width: 40px;                 /* Matches standard node width exactly */
+  height: 40px;                /* Matches standard node height exactly */
+  background-size: cover;    /* Fits image perfectly within the box bounds */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent; /* Removes any default background fill */
+  border: none;                /* Completely strips the default 3px white border */
+  box-shadow: none;            /* Optional: removes glow if you want just the raw asset */
+}
+
+/* Hover scales exactly like a standard node but retains clean styles */
+.image-node:hover {
+  transform: translate(-50%, -50%) scale(1.4); /* Matches standard scale factor */
+  background-color: transparent;               /* Prevents hover color shifts */
+  box-shadow: none;
+}
+
+.highlight{
+  color: var(--brightBlue);
+  font-family: "pf-pixelscript", sans-serif;
+
+}
+
+#map{
+  display: flex;
+  flex-direction: row;
+    background-color: var(--blueGrey);
+    color: white;
+    /* width: 100vw;
+  height: 100vh; */
+
+}
+
+#map-div{
+  width: 20%;
+}
