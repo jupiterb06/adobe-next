@@ -9,6 +9,7 @@
 body{
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 section{
@@ -20,7 +21,7 @@ section{
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
 
   border-top: 1px solid var(--offBlack);
   border-bottom: 1px solid var(--offBlack);
@@ -33,12 +34,16 @@ button{
   background-color: transparent;
   border-radius: 50px;
   width: fit-content;
+  /* max-height: 92px; */
   padding: 20px;
 
-  font-family: "Google Sans Code", monospace;
+  font-family: "argent-pixel-cf", sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 2.5rem;
+  font-size: 2rem;
+
+    line-height: 1.5; 
+
 
   text-align: right;
 
@@ -50,6 +55,9 @@ button:hover{
   background-color: var(--offBlack);
   color: white;
   scale: 102%;
+  font-style: italic;
+
+
 }
 h2{
   font-family: "pf-pixelscript", sans-serif;
@@ -220,6 +228,11 @@ font-style: normal;
 
 }
 
+.flex-div{
+  display: flex;
+  flex-direction: row;
+}
+
 #map{
   display: flex;
   flex-direction: row;
@@ -233,3 +246,42 @@ font-style: normal;
 #map-div{
   width: 20%;
 }
+
+
+
+@keyframes marquee-content {
+	/* Element one fully ON screen at left-edge of container. */
+	from {
+		transform: translateX( 0% );
+	}
+	/* Element one fully OFF screen (just beyond left-ledge of container). */
+	to {
+		transform: translateX( -99% );
+	}
+}
+
+		.marquee {
+      background-color: var(--offBlack);
+			display: flex ;
+			overflow: hidden ;
+			white-space: nowrap ;
+      color: white;
+      width: 100vw;
+      margin: 0;
+      padding: 10px 0;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+    font-family: "argent-pixel-cf", sans-serif;
+
+		}
+		.marquee__item {
+			animation-duration: 20s ;
+			animation-iteration-count: infinite ;
+			animation-name: marquee-content ;
+			animation-timing-function: linear ;
+      padding: 0 2px;
+			/* padding: 5px 15px 5px 15px ; */
+		}
