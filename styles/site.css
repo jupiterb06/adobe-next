@@ -131,7 +131,6 @@ a:hover{
   color:white;
 
       cursor: url("../images/cursor/star.png"), auto !important;
-
 }
 img{
   width: 30%;
@@ -531,8 +530,10 @@ footer{
 
     padding-left: 10px;
 
-    background-image: url("../images/mystify.gif");
-    background-size: cover;
+    background-image: url("../images/rotatingCube.gif");
+    /* background: radial-gradient(var(--offBlack), var(--blueGrey));
+    background-size: 400% 400%; Expands size for panning effect */
+    /* animation: fluidMotion 5s ease infinite; */
 
     /* width: 100vw;
   height: 100vh; */
@@ -557,7 +558,10 @@ footer{
 
 
 #more-about{
-  background-color: var(--brightBlue);
+
+  background-image: url("../images/clouds2.gif");
+  background-size: cover;
+  /* background-color: var(--brightBlue); */
   /* background-image: url("/images/crt.gif");
   background-size: 200% 200%;
   background-position: center; */
@@ -597,17 +601,17 @@ footer{
 }
 
 #ai{
-  background-image: url("../images/flowers.gif");
-  background-size: cover;
-
+  background-image: url("../images/ascii.png");
+  background-size: contain;
+  background-position: right;
 
 
 }
 #more-ai{
 
 
-  background-image: url("../images/photos/party.gif");
-  background-size: cover;
+  background-image: url("../images/pyramid.gif");
+  /* background-size: cover; */
 
   justify-content: center;
   align-items: center;

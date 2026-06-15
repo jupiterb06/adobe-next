@@ -134,7 +134,7 @@ const mapData = {
   image: `images/icons/computerBlack.png`
 },
 
-{ id: 15, name: `Co-op Houses`, x: 82, y: 74,
+{ id: 15, name: `Co-op Houses`, x: 45, y: 65,
   desc: `<ul>
     <li>Affordable group housing emphasizing community and activism</li>
     <li>Alternative to dorms and Greek life</li>
