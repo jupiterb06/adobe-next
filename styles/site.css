@@ -1,15 +1,34 @@
 :root{
-  --blueGrey: #41404d;
+  --offWhite: #ecf0f1;
+  --blueGrey: #676671;
   --lightPink: #f9dcf1;
   --brightBlue: #7c80f3;
   --brightPink: #f18ddb;
-  --offBlack: #111112;
+  --offBlack: #313138;
+}
+
+html{
+  background-color: var(--offWhite);
+  color: var(--offBlack);
+
+      /* Hide scrollbar for Chrome, Safari, newer Edge, and Opera */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+
+    /* Hide scrollbar for legacy IE and older Edge */
+    -ms-overflow-style: none; 
 }
 
 body{
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+
+  cursor: url("/images/cursor/normal2.cur"), auto;
 }
 
 section{
@@ -26,12 +45,15 @@ section{
   border-top: 1px solid var(--offBlack);
   border-bottom: 1px solid var(--offBlack);
 
+  position: relative;
 
 }
 button{
 
+    cursor: url("/images/cursor/pointer.cur"), auto;
+
   border: 1px solid var(--offBlack);
-  background-color: transparent;
+  background-color: var(--lightPink);
   border-radius: 50px;
   width: fit-content;
   /* max-height: 92px; */
@@ -60,6 +82,7 @@ button:hover{
 
 }
 h2{
+
   font-family: "pf-pixelscript", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -76,6 +99,32 @@ font-style: normal;
   font-size: 2rem;
 }
 
+a, a:visited{
+    font-family: "pf-pixelscript", sans-serif;
+    color: var(--brightBlue);
+}
+
+a:hover{
+  background-color: var(--brightPink);
+  color:white;
+}
+img{
+  width: 30%;
+  border: 1px solid var(--offBlack);
+}
+
+footer{
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.bigImg{
+  height:100%;
+  width: fit-content;
+  /* max-width: 25%; */
+  margin-right: 10px;
+}
+
 /* Initial hidden state */
 .fade-in-element {
   opacity: 0;
@@ -89,6 +138,47 @@ font-style: normal;
   animation: blink 0.7s infinite;
 }
 
+.image-btn{
+  background-color: transparent;
+  min-width: 30%;
+  border: none;
+  padding: 0;
+
+  flex-grow:1;
+
+}
+
+.image-btn img{
+  width: 100%;
+  border: none;
+  padding: 0;
+}
+
+.image-btn:hover{
+  background-color: transparent;
+  scale: 105%;
+}
+
+.image-btn-side{
+  min-width: 20%;
+  height: 100vh;
+  border-radius: 0px;
+  border: none;
+  border-left: 1px solid var(--offBlack);
+
+
+  writing-mode: vertical-rl; 
+  font-family: "pf-pixelscript", sans-serif;
+  font-size: 4.5rem;
+  text-align: center;
+
+}
+
+.image-btn-side:hover{
+  scale:none !important;
+
+}
+
 
 @keyframes blink {
   0%, 100% { opacity: 1; }
@@ -98,8 +188,11 @@ font-style: normal;
 #map-container {
   position: relative;
   /* width: 100vw; */
-  width: 80%;
-  height: 100vh;
+  width: 100%;
+  margin: auto;
+        height: 69vh;
+
+  /* height: 100vh; */
   overflow: hidden;
 }
 
@@ -114,7 +207,7 @@ font-style: normal;
 
 /* Default state of visible path lines */
 .connection-line {
-  stroke: rgba(255, 255, 255, 0.2);
+  stroke: var(--lightPink);
   stroke-width: 2;
   pointer-events: none; /* Let the cursor ignore this thin element */
   transition: stroke 0.2s, stroke-width 0.2s;
@@ -130,14 +223,14 @@ font-style: normal;
 
 /* Bright highlight triggered via JS class injection during mouseenter */
 .connection-line.line-active {
-  stroke: #ff007f;
+  stroke: var(--brightPink);
   stroke-width: 3;
 }
 /* Styled HTML interactive Nodes */
 .node {
   position: absolute;
-  width: 24px;
-  height: 24px;
+  width: 50px;
+  height: 50px;
   background-color: #00fff0;
   border: 3px solid #fff;
   border-radius: 50%;
@@ -155,27 +248,31 @@ font-style: normal;
 }
 
 /* Line connections */
-.connection-line {
-  stroke: rgba(255, 255, 255, 0.2);
-  stroke-width: 2;
-  transition: stroke 0.2s, stroke-width 0.2s;
-}
+
 
 /* Tooltip design */
 #tooltip {
-  position: absolute;
   background: white;
   color: #000000;
   border: 1px solid var(--offBlack);
   font-family: sans-serif;
   pointer-events: none;
-  z-index: 10;
-  transform: translate(15px, 15px);
+  
+}
+
+#tooltip-outer{
+    position: fixed;
+    background: var(--lightPink);
+    border: 1px solid var(--offBlack);
+    padding: 5px;
+    width: fit-content;
+    z-index: 9999;
+    pointer-events: none;
 }
 
 #tooltip-name{
 
-    padding: 10px 15px;
+    padding: 5px 10px;
     margin: 0;
 
   font-family: "pf-pixelscript", sans-serif;
@@ -186,7 +283,6 @@ font-style: normal;
   border: none;
   border-bottom: 1px solid var(--offBlack);
   text-align: left;
-
 }
 
 #tooltip-desc{
@@ -199,15 +295,25 @@ font-style: normal;
 
 }
 
+
+#tooltip-desc li:first-child{
+  list-style: none;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-line: 1px solid var(--offBlack);
+}
+#tooltip-desc .jupiterIn{
+  color: var(--brightPink);
+}
 .hidden {
   display: none;
 }
 
 /* Styling modifier strictly for nodes containing images */
 .image-node {
-  width: 40px;                 /* Matches standard node width exactly */
-  height: 40px;                /* Matches standard node height exactly */
-  background-size: cover;    /* Fits image perfectly within the box bounds */
+  width: 100px;                 /* Matches standard node width exactly */
+  height: 100px;                /* Matches standard node height exactly */
+  background-size: 80% 80%;    /* Fits image perfectly within the box bounds */
   background-repeat: no-repeat;
   background-position: center;
   background-color: transparent; /* Removes any default background fill */
@@ -219,7 +325,9 @@ font-style: normal;
 .image-node:hover {
   transform: translate(-50%, -50%) scale(1.4); /* Matches standard scale factor */
   background-color: transparent;               /* Prevents hover color shifts */
-  box-shadow: none;
+
+    box-shadow: none;            /* Optional: removes glow if you want just the raw asset */
+
 }
 
 .highlight{
@@ -227,27 +335,190 @@ font-style: normal;
   font-family: "pf-pixelscript", sans-serif;
 
 }
+.pink-highlight{
+  color: var(--brightPink);
+  font-family: "pf-pixelscript", sans-serif;
 
+}
 .flex-div{
   display: flex;
   flex-direction: row;
 }
 
+.mosaic{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.mosaic img{
+  flex-grow:1;
+}
+
+.popup-box-outer{
+  background-color: var(--lightPink);
+  border: 1px solid var(--offBlack);
+  padding: 5px;
+  padding-top: 40px;
+  width: fit-content;
+  max-width: 80%;
+
+  height: fit-content;
+
+  position: relative;
+  z-index: 1;
+
+}
+
+.popup-box{
+  background-color: white;
+  border: 1px solid var(--offBlack);
+  padding: 5px;
+
+  height:auto;
+  z-index: 2;
+
+
+}
+
+.warning{
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.warning p{
+  margin: 5px auto;
+}
+
+.popup-box button{
+  border-radius: 0px;
+  font-size: 1rem;
+  padding: 10px;
+}
+
+.popup-icon{
+  position: absolute;        /* Removes the image from normal document flow */
+  top: 10px;                 /* Distance from the very top edge of the div */
+  right: 10px;                /* Distance from the very left edge of the div */
+  width: 20px;               /* Constrain the size so it fits inside the padding */
+  
+  height: 20px;  
+  font-family: "argent-pixel-cf", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--offBlack);
+  background-color: var(--brightPink);
+  border: 1px solid var(--offBlack);
+}
+
+.popup-header{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  font-family: "argent-pixel-cf", sans-serif;
+  font-size: 1rem;
+  text-align: right;
+
+  color: var(--offBlack);
+}
 #map{
   display: flex;
   flex-direction: row;
     background-color: var(--blueGrey);
     color: white;
+
+    padding-left: 10px;
+
     /* width: 100vw;
   height: 100vh; */
+
 
 }
 
 #map-div{
   width: 20%;
 }
+#map-popup{
+  margin-top:32px; 
+
+  width: 60%;
+  height: 70vh;
+
+}
+
+#map-popup-inner{
+  height: 69vh;
+}
 
 
+#more-about{
+  background-color: var(--brightBlue);
+  /* background-image: url("/images/crt.gif");
+  background-size: 200% 200%;
+  background-position: center; */
+}
+
+#more-about-text{
+  margin-top: -10%;
+}
+#consistency-kills{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+#about-me{
+  background-image: url("/images/old_ps.svg");
+  background-size: cover;
+
+  align-items: flex-end;
+}
+#why-me{
+  padding: 0;
+
+  background-image: url("/images/starfield.gif");
+  background-size: cover;
+  /* color: var(--brightPink); */
+}
+
+#why-me p{
+    margin: auto;
+    padding: 0 10px;
+}
+
+#why-me-popup{
+  width: 60%;
+  margin: auto;
+}
+#more-ai{
+
+
+  background-image: url("/images/photos/party.gif");
+  background-size: cover;
+}
+
+#back-to-top{
+  min-width: 5% !important;
+  width: 10%;
+  .image-btn{
+    width: 50px;
+  }
+  
+  p{
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+
+#back-to-top:hover{
+  p{
+    color: var(--offBlack);
+    text-decoration: underline;
+  }
+}
 
 @keyframes marquee-content {
 	/* Element one fully ON screen at left-edge of container. */
