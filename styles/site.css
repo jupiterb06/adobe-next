@@ -28,7 +28,7 @@ body{
   padding: 0;
   overflow-x: hidden;
 
-  cursor: url("/images/cursor/normal2.cur"), auto;
+  cursor: url("/images/cursor/coil.ico"), auto;
 }
 
 section{
@@ -50,7 +50,7 @@ section{
 }
 button{
 
-    cursor: url("/images/cursor/pointer.cur"), auto;
+    cursor: url("/images/cursor/pointer.cur"), auto !important;
 
   border: 1px solid var(--offBlack);
   background-color: var(--lightPink);
@@ -74,6 +74,9 @@ button{
 }
 
 button:hover{
+
+      cursor: url("/images/cursor/pointer.cur"), auto !important;
+
   background-color: var(--offBlack);
   color: white;
   scale: 102%;
@@ -86,7 +89,7 @@ h2{
   font-family: "pf-pixelscript", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 6rem;
+  font-size: 5.5rem;
   margin: 0;
   margin-left: 10%;
   text-align: right;
@@ -146,6 +149,7 @@ footer{
 
   flex-grow:1;
 
+
 }
 
 .image-btn img{
@@ -157,7 +161,10 @@ footer{
 .image-btn:hover{
   background-color: transparent;
   scale: 105%;
+
+
 }
+
 
 .image-btn-side{
   min-width: 20%;
@@ -184,6 +191,16 @@ footer{
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 
 #map-container {
   position: relative;
@@ -304,6 +321,12 @@ footer{
 }
 #tooltip-desc .jupiterIn{
   color: var(--brightPink);
+
+}
+
+#scroll-to-more-ai:hover{
+    animation: spin 8s linear infinite;
+
 }
 .hidden {
   display: none;
@@ -423,6 +446,46 @@ footer{
   text-align: right;
 
   color: var(--offBlack);
+}
+
+#start{
+  /* display: flex;
+  flex-direction: row; */
+
+  /* align-items: flex-end; */
+}
+
+#start-popup{
+  width: 100%;
+  margin: 0 5px;
+  height: 90vh;
+
+}
+
+#start-popup-inner{
+  height: 89vh;
+}
+
+#next-popup{
+  width: 30%;
+
+  position: absolute;
+  bottom: 70px;
+  right: 20px;
+  /* margin-left: -20%; */
+}
+
+#next-popup .popup-box{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#scroll-to-map{
+  height: fit-content;
+  /* align-self: flex-end;
+
+  margin-top: -10%; */
 }
 #map{
   display: flex;

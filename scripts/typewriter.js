@@ -20,7 +20,7 @@ let characterIndex = 0;
 
 const cursor2 = document.getElementById("cursor-2");
   cursor2.classList.add("hidden");
-      $(document.getElementById("scroll-to-map")).toggle();
+      $(document.getElementById("next-popup")).toggle();
 
 
 document.getElementById("start-title").textContent = "";
@@ -30,7 +30,7 @@ function typeSequence() {
   // Stop if all elements are typed out
   if (sequenceIndex >= sequence.length) {
       cursor2.classList.remove("hidden");
-      $(document.getElementById("scroll-to-map")).fadeToggle();
+      $(document.getElementById("next-popup")).fadeToggle();
 
     return;
 }
