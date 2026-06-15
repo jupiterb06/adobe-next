@@ -48,7 +48,7 @@ body{
   padding: 0;
   overflow-x: hidden;
 
-    cursor: url("images/cursor/star.png"), auto !important;
+    cursor: url("../images/cursor/star.png"), auto !important;
 }
 
 section{
@@ -100,7 +100,7 @@ button:hover{
   scale: 102%;
   font-style: italic;
 
-    cursor: url("images/cursor/star.png"), auto !important;
+    cursor: url("../images/cursor/star.png"), auto !important;
 
 }
 h2{
@@ -130,7 +130,7 @@ a:hover{
   background-color: var(--brightPink);
   color:white;
 
-      cursor: url("images/cursor/star.png"), auto !important;
+      cursor: url("../images/cursor/star.png"), auto !important;
 
 }
 img{
@@ -185,7 +185,7 @@ footer{
   background-color: transparent;
   scale: 105%;
 
-      cursor: url("images/cursor/star.png"), auto !important;
+      cursor: url("../images/cursor/star.png"), auto !important;
 
 
 }
@@ -208,7 +208,7 @@ footer{
 
 .image-btn-side:hover{
   scale:none !important;
-      cursor: url("images/cursor/star.png"), auto !important;
+      cursor: url("../images/cursor/star.png"), auto !important;
 
 
 }
@@ -261,7 +261,7 @@ footer{
 .connection-hover-target {
   stroke: transparent;
   stroke-width: 25px; /* Fat hit-box makes thin lines easy to hover */
-    cursor: url("images/cursor/star.png"), auto !important;
+    cursor: url("../images/cursor/star.png"), auto !important;
   pointer-events: stroke; /* Target catches mouse events specifically along its stroke path */
 }
 
@@ -290,7 +290,7 @@ footer{
   background-color: #ff007f;
   box-shadow: 0 0 20px rgba(255, 0, 127, 0.9);
 
-      cursor: url("images/cursor/star.png"), auto !important;
+      cursor: url("../images/cursor/star.png"), auto !important;
 
 }
 
@@ -384,7 +384,7 @@ footer{
 
     box-shadow: none;            /* Optional: removes glow if you want just the raw asset */
 
-        cursor: url("images/cursor/star.png"), auto !important;
+        cursor: url("../images/cursor/star.png"), auto !important;
 
 
 }
@@ -531,7 +531,7 @@ footer{
 
     padding-left: 10px;
 
-    background-image: url("images/mystify.gif");
+    background-image: url("../images/mystify.gif");
     background-size: cover;
 
     /* width: 100vw;
@@ -573,7 +573,7 @@ footer{
 }
 
 #about-me{
-  background-image: url("images/old_ps.svg");
+  background-image: url("../images/old_ps.svg");
   background-size: cover;
 
   align-items: flex-end;
@@ -581,7 +581,7 @@ footer{
 #why-me{
   padding: 0;
 
-  background-image: url("images/starfield.gif");
+  background-image: url("../images/starfield.gif");
   background-size: cover;
   /* color: var(--brightPink); */
 }
@@ -597,7 +597,7 @@ footer{
 }
 
 #ai{
-  background-image: url("images/flowers.gif");
+  background-image: url("../images/flowers.gif");
   background-size: cover;
 
 
@@ -606,7 +606,7 @@ footer{
 #more-ai{
 
 
-  background-image: url("images/photos/party.gif");
+  background-image: url("../images/photos/party.gif");
   background-size: cover;
 
   justify-content: center;
