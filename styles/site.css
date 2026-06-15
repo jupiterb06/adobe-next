@@ -1,7 +1,10 @@
 :root{
   --offWhite: #ecf0f1;
+  --lightGrey: #bdc3c7;
   --blueGrey: #676671;
+  --reallyLightPink: #f5ecf2;
   --lightPink: #f9dcf1;
+  --lightBlue: #a7afea;
   --brightBlue: #7c80f3;
   --brightPink: #f18ddb;
   --offBlack: #313138;
@@ -21,14 +24,31 @@ html{
 
     /* Hide scrollbar for legacy IE and older Edge */
     -ms-overflow-style: none; 
+
+    background: linear-gradient(0.33turn, var(--lightPink), var(--offWhite),var(--lightBlue));
+    background-size: 400% 400%; /* Expands size for panning effect */
+    animation: fluidMotion 5s ease infinite;
 }
 
+
+
+@keyframes fluidMotion {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 body{
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 
-  cursor: url("/images/cursor/coil.ico"), auto;
+    cursor: url("/images/cursor/star.png"), auto !important;
 }
 
 section{
@@ -50,7 +70,6 @@ section{
 }
 button{
 
-    cursor: url("/images/cursor/pointer.cur"), auto !important;
 
   border: 1px solid var(--offBlack);
   background-color: var(--lightPink);
@@ -75,13 +94,13 @@ button{
 
 button:hover{
 
-      cursor: url("/images/cursor/pointer.cur"), auto !important;
 
   background-color: var(--offBlack);
   color: white;
   scale: 102%;
   font-style: italic;
 
+    cursor: url("/images/cursor/star.png"), auto !important;
 
 }
 h2{
@@ -110,6 +129,9 @@ a, a:visited{
 a:hover{
   background-color: var(--brightPink);
   color:white;
+
+      cursor: url("/images/cursor/star.png"), auto !important;
+
 }
 img{
   width: 30%;
@@ -153,14 +175,17 @@ footer{
 }
 
 .image-btn img{
-  width: 100%;
+  width: 85%;
   border: none;
   padding: 0;
+  margin: 0 auto;
 }
 
 .image-btn:hover{
   background-color: transparent;
   scale: 105%;
+
+      cursor: url("/images/cursor/star.png"), auto !important;
 
 
 }
@@ -183,6 +208,8 @@ footer{
 
 .image-btn-side:hover{
   scale:none !important;
+      cursor: url("/images/cursor/star.png"), auto !important;
+
 
 }
 
@@ -233,8 +260,8 @@ footer{
 /* Invisible overlay lines strictly acting as wide mouse collision triggers */
 .connection-hover-target {
   stroke: transparent;
-  stroke-width: 16px; /* Fat hit-box makes thin lines easy to hover */
-  cursor: pointer;
+  stroke-width: 25px; /* Fat hit-box makes thin lines easy to hover */
+    cursor: url("/images/cursor/star.png"), auto !important;
   pointer-events: stroke; /* Target catches mouse events specifically along its stroke path */
 }
 
@@ -262,6 +289,9 @@ footer{
   transform: translate(-50%, -50%) scale(1.4);
   background-color: #ff007f;
   box-shadow: 0 0 20px rgba(255, 0, 127, 0.9);
+
+      cursor: url("/images/cursor/star.png"), auto !important;
+
 }
 
 /* Line connections */
@@ -325,7 +355,10 @@ footer{
 }
 
 #scroll-to-more-ai:hover{
-    animation: spin 8s linear infinite;
+  img{
+        animation: spin 8s linear infinite;
+
+  }
 
 }
 .hidden {
@@ -350,6 +383,9 @@ footer{
   background-color: transparent;               /* Prevents hover color shifts */
 
     box-shadow: none;            /* Optional: removes glow if you want just the raw asset */
+
+        cursor: url("/images/cursor/star.png"), auto !important;
+
 
 }
 
@@ -495,6 +531,9 @@ footer{
 
     padding-left: 10px;
 
+    background-image: url("/images/mystify.gif");
+    background-size: cover;
+
     /* width: 100vw;
   height: 100vh; */
 
@@ -556,11 +595,22 @@ footer{
   width: 60%;
   margin: auto;
 }
+
+#ai{
+  background-image: url("/images/flowers.gif");
+  background-size: cover;
+
+
+
+}
 #more-ai{
 
 
   background-image: url("/images/photos/party.gif");
   background-size: cover;
+
+  justify-content: center;
+  align-items: center;
 }
 
 #back-to-top{
