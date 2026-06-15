@@ -25,7 +25,7 @@ html{
     /* Hide scrollbar for legacy IE and older Edge */
     -ms-overflow-style: none; 
 
-    background: linear-gradient(0.33turn, var(--lightPink), var(--offWhite),var(--lightBlue));
+    background: linear-gradient(0.33turn, var(--offWhite),  var(--reallyLightPink), var(--brightPink));
     background-size: 400% 400%; /* Expands size for panning effect */
     animation: fluidMotion 5s ease infinite;
 }
