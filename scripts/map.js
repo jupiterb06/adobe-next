@@ -149,7 +149,6 @@ const mapData = {
   ],
   connections: [
     { from: 1, to: 2, name: "", desc: "same parent college" },
-    { from: 2, to: 3, name: "Supply Route B", desc: "Unsecured underground transit tunnel." },
     { from: 1, to: 13, name: "", desc: "many art students choose to live in Risley Hall" },
     { from: 1, to: 4, name: "", desc: "several courses are crosslisted between the two departments, particularly those focused on film and media production"},
 
